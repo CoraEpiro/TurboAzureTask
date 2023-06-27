@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = $"{Model.CarName}";
+    DateTime.TryParse(@Model.CarDate.ToString(), out DateTime carDate);
+}
+@model Car
+
+<link rel="stylesheet" href="/css/OneCar.css" />
+
+<div class="container-fluid row col-md-12">
+    <div class="container">
+        <h3 class="tabs-header d-flex justify-content-between border-bottom my-5">@Model.CarName</h3>
+        <div class="car-page">
+            <div class="image-and-price">
+                <img class="card-img" src="@Model.CarImage" alt="@Model.CarName">
+                <h4 class="price-card">@Model.CarPrice AZN</h4>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Car Description</h5>
+                <p class="card-text">@Model.CarDescription</p>
+
+                <section>
+                    <div class="product-properties">
+                        <div>
+                            <div>
+                                <label class="product-properties__i-name">Model:</label>
+                                <span class="product-properties__i-value">@Model.CarModel</span>
+                            </div>
+                            <div>
+                                <label class="product-properties__i-name">Manufacturer:</label>
+                                <span class="product-properties__i-value">@Model.CarManufacturer</span>
+                            </div>
+                            <div>
+                                <label class="product-properties__i-name">City:</label>
+                                <span class="product-properties__i-value">@Model.CarCity</span>
+                            </div>
+                            <div>
+                                <label class="product-properties__i-name">Year:</label>
+                                <span class="product-properties__i-value">@Model.CarYear</span>
+                            </div>
+                        </div>
+                        <div class="product-properties__column">
+                            <div>
+                                <label class="product-properties__i-name">Kilometer:</label>
+                                <span class="product-properties__i-value">@Model.CarKilometer km</span>
+                            </div>
+                            <div>
+                                <label class="product-properties__i-name">Color:</label>
+                                <span class="product-properties__i-value">@Model.CarColor</span>
+                            </div>
+                            <div>
+                                <label class="product-properties__i-name">Date:</label>
+                                <span class="product-properties__i-value">@carDate.ToString("MM/dd/yyyy")</span>
+                            </div>
+                            <div>
+                                <label class="product-properties__i-name">Status:</label>
+                                <span class="product-properties__i-value">@Model.CarStatus</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

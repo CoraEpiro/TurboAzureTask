@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<Car>
+
+<link rel="stylesheet" href="../Content/HomePage.css"/>
+
+<div class="text-center">
+    <form method="post" asp-action="Seed">
+        <p>Generating Cars</p>
+        <input type="text" name="numberOfCars" placeholder="Enter the number of cars"/>
+        <button type="submit">Generate</button>
+    </form>
+    <br />
+
+    @if (Model is null)
+    {
+        <h2>There is no car in the system, please generate cars at above.</h2>
+    }
+    else{
+        <section class="py-5">
+            <div class="container-fluid row col-md-12 bootstrap-tabs product-tabs">
+                <h3 class="tabs-header d-flex justify-content-between border-bottom my-5">Trending Products</h3>
+                <div class="tab-content" id="nav-tabContent">
+                    <div id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab">
+                        <div class="tab-pane fade show active product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                                @foreach (var car in Model)
+                                {
+                                    <a class="col" asp-route-id="@car.Id" asp-controller="OneCar">
+                                        <div class="product-item">
+                                            <div class="card" title="Product Title">
+                                                <img src="@car.CarImage" alt="@car.CarName">
+                                            </div>
+                                            <h4>@car.CarPrice Azn</h4>
+                                            <span>@car.CarName</span>
+                                            <br/>
+                                            <span>@car.CarYear, @car.CarManufacturer, @car.CarKilometer</span>
+                                        </div>
+                                    </a>
+                                }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+</div>

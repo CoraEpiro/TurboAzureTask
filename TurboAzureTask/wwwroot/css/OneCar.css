@@ -1,0 +1,51 @@
+﻿.card-img {
+    width: 640px;
+    height: 480px;
+    align-content: center;
+}
+
+.car-page {
+    align-content: center;
+    text-align: center;
+    margin: 20px 20% 0px 28%;
+}
+
+.image-and-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-and-price img {
+    border-radius: 7px;
+}
+
+.price-card {
+    width: 20%;
+    height: 80px;
+    margin-bottom: 65%;
+    margin-left: 10%;
+    align-content: center;
+    background-color: #F6F7FA;
+    border-color: #4C88F9;
+    border-style: solid;
+    border-radius: 7px;
+}
+
+.product-properties{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.product-properties__i-name {
+    float: left;
+    margin-right: 40px;
+}
+
+.product-properties__i-value {
+    float: right;
+    margin-left: 40px;
+}
